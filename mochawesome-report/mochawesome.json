@@ -1,0 +1,871 @@
+{
+  "stats": {
+    "suites": 12,
+    "tests": 20,
+    "passes": 20,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-10-20T10:46:48.586Z",
+    "end": "2023-10-20T10:47:21.012Z",
+    "duration": 32426,
+    "testsRegistered": 20,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "201116ac-83d4-4eee-b0f7-8e8aac87299c",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "aaa471d2-7a90-4e7f-a19b-2cc4e6174c7b",
+          "title": "Delete the Created User ",
+          "fullFile": "/Users/testvagrant/Documents/GitHub/contactlist_apiautomation_assignment/test/user/Delete.spec.js",
+          "file": "/test/user/Delete.spec.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook: After login we will get the bearer token in \"Delete the Created User \"",
+              "fullTitle": "Delete the Created User  \"before all\" hook: After login we will get the bearer token in \"Delete the Created User \"",
+              "timedOut": false,
+              "duration": 1702,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "token = await userToken(user);",
+              "err": {},
+              "uuid": "fc09cd81-b41a-44be-a798-e1a1244c2b62",
+              "parentUUID": "aaa471d2-7a90-4e7f-a19b-2cc4e6174c7b",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "After User is crested we need be delete the user",
+              "fullTitle": "Delete the Created User  After User is crested we need be delete the user",
+              "timedOut": false,
+              "duration": 1059,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const payload = {\n  headers: {\n    Authorization: `Bearer ${token}`,\n  },\n};\ntry {\n  const response = await axios.delete(`${baseUrl}` + \"me\", payload);\n  console.log(response.data);\n  expect(response.status).to.equal(200);\n} catch (error) {\n  console.log(error);\n}",
+              "err": {},
+              "uuid": "ac485186-ed0e-495a-8170-15b98ed4e9f5",
+              "parentUUID": "aaa471d2-7a90-4e7f-a19b-2cc4e6174c7b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ac485186-ed0e-495a-8170-15b98ed4e9f5"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1059,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "302a7957-f40c-417f-a03a-1a1705308c94",
+          "title": "Login Test",
+          "fullFile": "/Users/testvagrant/Documents/GitHub/contactlist_apiautomation_assignment/test/user/LogOut.spec.js",
+          "file": "/test/user/LogOut.spec.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook:  login , get the bearer token in \"Login Test\"",
+              "fullTitle": "Login Test \"before all\" hook:  login , get the bearer token in \"Login Test\"",
+              "timedOut": false,
+              "duration": 820,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "token = await userToken(user);",
+              "err": {},
+              "uuid": "61911706-92ea-46f1-85dd-08ce8e84efcf",
+              "parentUUID": "302a7957-f40c-417f-a03a-1a1705308c94",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Should be Able to login after user get Created",
+              "fullTitle": "Login Test Should be Able to login after user get Created",
+              "timedOut": false,
+              "duration": 740,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await axios.post(`${baseUrl}` + \"login\", loginData);\n// token = response.data.token;\nexpect(response.status).to.be.equal(200);\nexpect(token).to.exist;",
+              "err": {},
+              "uuid": "816e61a0-7926-46ee-8bbd-418ca4daf224",
+              "parentUUID": "302a7957-f40c-417f-a03a-1a1705308c94",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "816e61a0-7926-46ee-8bbd-418ca4daf224"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 740,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "f4188d26-8fce-4e61-a1c7-bab82364298d",
+          "title": "Logout Test",
+          "fullFile": "/Users/testvagrant/Documents/GitHub/contactlist_apiautomation_assignment/test/user/LogOut.spec.js",
+          "file": "/test/user/LogOut.spec.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Log Out User",
+              "fullTitle": "Logout Test Log Out User",
+              "timedOut": false,
+              "duration": 1058,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "if (!token) {\n    console.error(\"No valid token available.\");\n    return;\n  }\n  const payload = {\n    headers: {\n      Authorization: `Bearer ${token}`,\n    },\n  };\n  const response = await axios.post(\n    `${baseUrl}` + \"logout\",\n    null,\n    payload\n  );\n  console.log(response.data);\n  expect(response.status).to.equal(200);\n // expect(response.data.message).to.equal(\"Logged out successfully\");",
+              "err": {},
+              "uuid": "63ec77f0-dbe1-4c4c-b1c4-d84ef62fb704",
+              "parentUUID": "f4188d26-8fce-4e61-a1c7-bab82364298d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Log Out Invalid Token",
+              "fullTitle": "Logout Test Log Out Invalid Token",
+              "timedOut": false,
+              "duration": 1229,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const invalidToken = \"invalidToken\"; \n\nif (!invalidToken) {\n  console.error(\"No valid token available.\");\n  return;\n}\nconst payload = {\n  headers: {\n    Authorization: `Bearer ${invalidToken}`,\n  },\n};\n\ntry {\n  const logoutResponse = await axios.post(\n    `${baseUrl}`+ \"logout\",\n    null,\n    payload\n  );\n  console.log(logoutResponse.status, logoutResponse.data);\n} catch (error) {\n \n  expect(error.response.status).to.equal(401);\n}",
+              "err": {},
+              "uuid": "826c34fa-fd50-4866-8d80-619a09b6def0",
+              "parentUUID": "f4188d26-8fce-4e61-a1c7-bab82364298d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "63ec77f0-dbe1-4c4c-b1c4-d84ef62fb704",
+            "826c34fa-fd50-4866-8d80-619a09b6def0"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2287,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "74cdc0ea-87a7-495c-9c71-a890aecc7228",
+          "title": "Login Test",
+          "fullFile": "/Users/testvagrant/Documents/GitHub/contactlist_apiautomation_assignment/test/user/Login.spec.js",
+          "file": "/test/user/Login.spec.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook:  login , get the bearer token in \"Login Test\"",
+              "fullTitle": "Login Test \"before all\" hook:  login , get the bearer token in \"Login Test\"",
+              "timedOut": false,
+              "duration": 1161,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "token = await userToken(user);",
+              "err": {},
+              "uuid": "e4f06fe2-595b-4458-bfd6-250fe0786767",
+              "parentUUID": "74cdc0ea-87a7-495c-9c71-a890aecc7228",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Should be Able to login after user get Created",
+              "fullTitle": "Login Test Should be Able to login after user get Created",
+              "timedOut": false,
+              "duration": 975,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await axios.post(`${baseUrl}` + \"login\", loginData);\n// token = response.data.token;\nexpect(response.status).to.be.equal(200);\nexpect(token).to.exist;",
+              "err": {},
+              "uuid": "d7105a99-07db-4a14-8617-ea381de55013",
+              "parentUUID": "74cdc0ea-87a7-495c-9c71-a890aecc7228",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d7105a99-07db-4a14-8617-ea381de55013"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 975,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "2d4f02c0-21e4-4ce7-b77a-55a104627bb3",
+          "title": "Updating the User",
+          "fullFile": "/Users/testvagrant/Documents/GitHub/contactlist_apiautomation_assignment/test/user/Update.spec.js",
+          "file": "/test/user/Update.spec.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook: login and get the bearer token in \"Updating the User\"",
+              "fullTitle": "Updating the User \"before all\" hook: login and get the bearer token in \"Updating the User\"",
+              "timedOut": false,
+              "duration": 726,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "token = await userToken(user);",
+              "err": {},
+              "uuid": "d6f55897-90ee-4760-bfcc-d122679bb5c2",
+              "parentUUID": "2d4f02c0-21e4-4ce7-b77a-55a104627bb3",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "User should be Updated first name",
+              "fullTitle": "Updating the User User should be Updated first name",
+              "timedOut": false,
+              "duration": 968,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "if (!token) {\n     console.error(\"No valid token available.\");\n     return;\n   }\n \n   const payload = {\n     headers: {\n       Authorization: `Bearer ${token}`,\n     },\n   };\n   const response = await axios.patch(`${baseUrl}`+ \"me\",\n     update_FirstName,\n     payload\n   );\n   console.log(response.data);\n   expect(response.status).to.equal(200);",
+              "err": {},
+              "uuid": "854bd055-e425-4c8f-bd39-1e00e1dd4937",
+              "parentUUID": "2d4f02c0-21e4-4ce7-b77a-55a104627bb3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "User should be Updated last name",
+              "fullTitle": "Updating the User User should be Updated last name",
+              "timedOut": false,
+              "duration": 1080,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "if (!token) {\n  console.error(\"No valid token available.\");\n  return;\n}\nconst payload = {\n  headers: {\n    Authorization: `Bearer ${token}`,\n  },\n};\nconst response = await axios.patch(\n  `${baseUrl}` + \"me\",\n  update_lastName,\n  payload\n);\nconsole.log(response.data);\nexpect(response.status).to.equal(200);",
+              "err": {},
+              "uuid": "bd45b3e6-8785-43a8-bdab-175e387b80ee",
+              "parentUUID": "2d4f02c0-21e4-4ce7-b77a-55a104627bb3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "check updated name  is correctly shown ",
+              "fullTitle": "Updating the User check updated name  is correctly shown ",
+              "timedOut": false,
+              "duration": 1006,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const payload = {\n  headers: {\n    Authorization: `Bearer ${token}`,\n  },\n};\ntry {\n  const response = await axios.patch(\n    `${baseUrl}` + \"me\",\n    update_FirstName,\n    payload\n  );\n   console.log(response.data);\n  expect(response.data.firstName).to.be.equal(updatedName);\n     \n} catch (error) {\n  console.log(error);\n}",
+              "err": {},
+              "uuid": "1b8ecf8e-9c79-42cc-87d4-c9fa53e56656",
+              "parentUUID": "2d4f02c0-21e4-4ce7-b77a-55a104627bb3",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "854bd055-e425-4c8f-bd39-1e00e1dd4937",
+            "bd45b3e6-8785-43a8-bdab-175e387b80ee",
+            "1b8ecf8e-9c79-42cc-87d4-c9fa53e56656"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3054,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "0395d519-0b8c-40c7-a420-888b50604c4a",
+          "title": "Add user",
+          "fullFile": "/Users/testvagrant/Documents/GitHub/contactlist_apiautomation_assignment/test/user/createUser.spec.js",
+          "file": "/test/user/createUser.spec.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Adding the user",
+              "fullTitle": "Add user Adding the user",
+              "timedOut": false,
+              "duration": 1036,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "try {\n      console.log(user);\n      const response = await axios.post(baseUrl, user);\n      token = response.data.token;\n      User_Id = response.data.user._id;\n      console.log(response.data);\n      console.log(\"UserId : \", User_Id);\n      expect(response.status).to.equal(201);\n    } catch (error) {\n      console.error(error);\n    }",
+              "err": {},
+              "uuid": "69412dd8-4d5f-4afb-b934-f6a64f06ae67",
+              "parentUUID": "0395d519-0b8c-40c7-a420-888b50604c4a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "69412dd8-4d5f-4afb-b934-f6a64f06ae67"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1036,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "6ed95512-942e-4c91-a256-2ec9d7c8d362",
+          "title": "Adding User and Get Added user information",
+          "fullFile": "/Users/testvagrant/Documents/GitHub/contactlist_apiautomation_assignment/test/user/getUser.spec.js",
+          "file": "/test/user/getUser.spec.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook: Should login and get the bearer token in \"Adding User and Get Added user information\"",
+              "fullTitle": "Adding User and Get Added user information \"before all\" hook: Should login and get the bearer token in \"Adding User and Get Added user information\"",
+              "timedOut": false,
+              "duration": 1227,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "token = await userToken(user);\n// console.log(token);",
+              "err": {},
+              "uuid": "5dfb3b00-27b8-4d53-b514-555a3d3f198d",
+              "parentUUID": "6ed95512-942e-4c91-a256-2ec9d7c8d362",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "get user info",
+              "fullTitle": "Adding User and Get Added user information get user info",
+              "timedOut": false,
+              "duration": 1064,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "if (!token) {\n  console.error(\"No valid token available.\");\n  return;\n}\nconst payload = {\n  headers: {\n    Authorization: `Bearer ${token}`,\n  },\n};\nconst response = await axios.get(`${baseUrl}/users/me`, payload);\nconsole.log(response.data);\nexpect(response.status).to.equal(200);",
+              "err": {},
+              "uuid": "0c430b2c-7301-4804-9fa2-561ea2f73e16",
+              "parentUUID": "6ed95512-942e-4c91-a256-2ec9d7c8d362",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0c430b2c-7301-4804-9fa2-561ea2f73e16"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1064,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "335dd7d6-3898-4813-b276-1f165a930789",
+          "title": "Login",
+          "fullFile": "/Users/testvagrant/Documents/GitHub/contactlist_apiautomation_assignment/test/contact/AddContact.js",
+          "file": "/test/contact/AddContact.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook: login and get the bearer token in \"Login\"",
+              "fullTitle": "Login \"before all\" hook: login and get the bearer token in \"Login\"",
+              "timedOut": false,
+              "duration": 1390,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "token = await userToken()",
+              "err": {},
+              "uuid": "e36cb6e3-e566-4015-bbd5-fd24fb9ee41f",
+              "parentUUID": "335dd7d6-3898-4813-b276-1f165a930789",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should Contact is creating ",
+              "fullTitle": "Login should Contact is creating ",
+              "timedOut": false,
+              "duration": 843,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const payload = {\n  headers: {\n    Authorization: `Bearer ${token}`,\n  },\n};\ntry {\n  const response = await axios.post(`${baseUrl}` ,contactdata,\n    payload\n  );\n  \n  expect(response.status).to.be.equal(201);\n} catch (error) {\n  console.log(error);\n}",
+              "err": {},
+              "uuid": "3e799475-afa3-483b-ae1d-77ba12b19907",
+              "parentUUID": "335dd7d6-3898-4813-b276-1f165a930789",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Ensuring the lastname of contact details is correct  ",
+              "fullTitle": "Login Ensuring the lastname of contact details is correct  ",
+              "timedOut": false,
+              "duration": 671,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const payload = {\n  headers: {\n    Authorization: `Bearer ${token}`,\n  },\n};\ntry {\n  const response = await axios.post(\n    `${baseUrl}`,\n    contactdata,\n    payload\n  );\n  expect(response.data.lastName).to.be.equal(contactdata.lastName);\n} catch (error) {\n  console.log(error);\n}",
+              "err": {},
+              "uuid": "dcd01e25-aecd-4972-a7c1-95d31d28ef72",
+              "parentUUID": "335dd7d6-3898-4813-b276-1f165a930789",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "3e799475-afa3-483b-ae1d-77ba12b19907",
+            "dcd01e25-aecd-4972-a7c1-95d31d28ef72"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1514,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "2d6a6364-58af-427e-bc1f-f98bbb4414c6",
+          "title": "Generate and get user using ID",
+          "fullFile": "/Users/testvagrant/Documents/GitHub/contactlist_apiautomation_assignment/test/contact/DeleteContact.js",
+          "file": "/test/contact/DeleteContact.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook: login and get the bearer token in \"Generate and get user using ID\"",
+              "fullTitle": "Generate and get user using ID \"before all\" hook: login and get the bearer token in \"Generate and get user using ID\"",
+              "timedOut": false,
+              "duration": 941,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "token = await userToken();",
+              "err": {},
+              "uuid": "741ee65f-4fdd-4819-a009-02d0d1ea9f76",
+              "parentUUID": "2d6a6364-58af-427e-bc1f-f98bbb4414c6",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should be able to get by user_ID  ",
+              "fullTitle": "Generate and get user using ID should be able to get by user_ID  ",
+              "timedOut": false,
+              "duration": 1226,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const payload = {\n      headers: {\n        Authorization: `Bearer ${token}`,\n      },\n    };\n    try {\n      const response = await axios.get(`${baseUrl}`, payload);\n      user_ID = response.data[0]._id;\n      console.log(user_ID);\n      expect(response.status).to.be.equal(200);\n    } catch (error) {\n      console.log(error);\n    }",
+              "err": {},
+              "uuid": "cbcdecc9-2362-4d69-9d7d-1d5753f601aa",
+              "parentUUID": "2d6a6364-58af-427e-bc1f-f98bbb4414c6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should be able to delte the user by ID ",
+              "fullTitle": "Generate and get user using ID should be able to delte the user by ID ",
+              "timedOut": false,
+              "duration": 1231,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const payload = {\n    headers: {\n      Authorization: `Bearer ${token}`,\n    },\n  };\n  console.log(user_ID)\n  console.log(token);\n  try {\n    const response = await axios.delete(\n      `${baseUrl}${user_ID}`,\n      payload\n    );\n    \n    expect(response.status).to.be.equal(200);\n  } catch (error) {\n    console.log(error);\n  }",
+              "err": {},
+              "uuid": "bb563ce3-3c88-427d-a9de-54ce8483034d",
+              "parentUUID": "2d6a6364-58af-427e-bc1f-f98bbb4414c6",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "cbcdecc9-2362-4d69-9d7d-1d5753f601aa",
+            "bb563ce3-3c88-427d-a9de-54ce8483034d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2457,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "b937c397-eeb5-4d6d-a841-6d3b87cb86d6",
+          "title": "Should be able to get contact Id and Update some details of it ",
+          "fullFile": "/Users/testvagrant/Documents/GitHub/contactlist_apiautomation_assignment/test/contact/UpdateContact.js",
+          "file": "/test/contact/UpdateContact.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook: login and get the bearer token in \"Should be able to get contact Id and Update some details of it \"",
+              "fullTitle": "Should be able to get contact Id and Update some details of it  \"before all\" hook: login and get the bearer token in \"Should be able to get contact Id and Update some details of it \"",
+              "timedOut": false,
+              "duration": 1226,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "token = await userToken()",
+              "err": {},
+              "uuid": "5f2d0c25-6137-440b-ab23-b72fb32c3592",
+              "parentUUID": "b937c397-eeb5-4d6d-a841-6d3b87cb86d6",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should be able to get contact ID  ",
+              "fullTitle": "Should be able to get contact Id and Update some details of it  should be able to get contact ID  ",
+              "timedOut": false,
+              "duration": 957,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const payload = {\n    headers: {\n      Authorization: `Bearer ${token}`,\n    },\n  };\n  try {\n    const response = await axios.get(`${baseUrl}` ,\n      payload\n    );\n    \n     user_ID = (response.data[0]._id);\n     console.log(user_ID)\n       console.log(response.data);\n    expect(response.status).to.be.equal(200);\n  } catch (error) {\n    console.log(error);\n  }",
+              "err": {},
+              "uuid": "0cc75c01-6266-4756-b294-0bd6ddb2de94",
+              "parentUUID": "b937c397-eeb5-4d6d-a841-6d3b87cb86d6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should be able to update the first name  ",
+              "fullTitle": "Should be able to get contact Id and Update some details of it  should be able to update the first name  ",
+              "timedOut": false,
+              "duration": 705,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const payload = {\n  headers: {\n    Authorization: `Bearer ${token}`,\n  },\n};\ntry {\n  const response = await axios.patch(\n    `${baseUrl}${user_ID}`,\n    updatedfirstname ,\n    payload\n  );\n console.log(response.data);\n  expect(response.data.firstname).to.be.equal(updatedfirstname.firstName);\n} catch (error) {\n  console.log(error);\n}",
+              "err": {},
+              "uuid": "c84c9343-2c53-4ca7-8a0b-ec7409e3ad93",
+              "parentUUID": "b937c397-eeb5-4d6d-a841-6d3b87cb86d6",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0cc75c01-6266-4756-b294-0bd6ddb2de94",
+            "c84c9343-2c53-4ca7-8a0b-ec7409e3ad93"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1662,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "fde9eaf4-e7d0-433a-922b-5cc3881b9220",
+          "title": " Getting contact details",
+          "fullFile": "/Users/testvagrant/Documents/GitHub/contactlist_apiautomation_assignment/test/contact/getContact.js",
+          "file": "/test/contact/getContact.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook: login and get the bearer token in \" Getting contact details\"",
+              "fullTitle": " Getting contact details \"before all\" hook: login and get the bearer token in \" Getting contact details\"",
+              "timedOut": false,
+              "duration": 1206,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "token = await userToken()",
+              "err": {},
+              "uuid": "f917bfe6-3a91-4139-952f-8da1ac919982",
+              "parentUUID": "fde9eaf4-e7d0-433a-922b-5cc3881b9220",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should be able to get contact id  ",
+              "fullTitle": " Getting contact details should be able to get contact id  ",
+              "timedOut": false,
+              "duration": 1225,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const payload = {\n    headers: {\n      Authorization: `Bearer ${token}`,\n    },\n  };\n  try {\n    const response = await axios.get(`${baseUrl}` ,\n      payload\n    );\n    \n     user_ID = (response.data[0]._id);\n     console.log(user_ID)\n    expect(response.status).to.be.equal(200);\n  } catch (error) {\n    console.log(error);\n  }",
+              "err": {},
+              "uuid": "78b06f7b-ff43-4503-9e4a-43a367724362",
+              "parentUUID": "fde9eaf4-e7d0-433a-922b-5cc3881b9220",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "obtain Contact Details by user_ID ",
+              "fullTitle": " Getting contact details obtain Contact Details by user_ID ",
+              "timedOut": false,
+              "duration": 1047,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const payload = {\n  headers: {\n    Authorization: `Bearer ${token}`,\n  },\n};\ntry {\n  const response = await axios.get(`${baseUrl}${user_ID}`, payload);\n // console.log(response.data);\n  expect(response.status).to.be.equal(200);\n} catch (error) {\n  console.log(error);\n}",
+              "err": {},
+              "uuid": "cc7fd285-3c92-40b3-95d8-7c963865f73c",
+              "parentUUID": "fde9eaf4-e7d0-433a-922b-5cc3881b9220",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Negative Test : try to get Contact Details by invalid user id hard coded ",
+              "fullTitle": " Getting contact details Negative Test : try to get Contact Details by invalid user id hard coded ",
+              "timedOut": false,
+              "duration": 848,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let User_ID = \"6548653864346\"\nconst payload = {\n  headers: {\n    Authorization: `Bearer ${token}`,\n  },\n};\ntry {\n  const response = await axios.get(`${baseUrl}${User_ID}`, payload);\n  // console.log(response.data);\n  expect(response.status).to.be.equal(200);\n} catch (error) {\n  console.log(error);\n}",
+              "err": {},
+              "uuid": "bdff9fa1-c576-4158-8e25-478a0a8a95df",
+              "parentUUID": "fde9eaf4-e7d0-433a-922b-5cc3881b9220",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "78b06f7b-ff43-4503-9e4a-43a367724362",
+            "cc7fd285-3c92-40b3-95d8-7c963865f73c",
+            "bdff9fa1-c576-4158-8e25-478a0a8a95df"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3120,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "02cd98f5-a622-432d-a072-af81307ec0f9",
+          "title": "get all contact list with details  ",
+          "fullFile": "/Users/testvagrant/Documents/GitHub/contactlist_apiautomation_assignment/test/contact/getContactList.js",
+          "file": "/test/contact/getContactList.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook: login and get the bearer token in \"get all contact list with details  \"",
+              "fullTitle": "get all contact list with details   \"before all\" hook: login and get the bearer token in \"get all contact list with details  \"",
+              "timedOut": false,
+              "duration": 1377,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "token = await userToken()",
+              "err": {},
+              "uuid": "04c66f1d-5bae-4718-b8e7-b0762e47be7c",
+              "parentUUID": "02cd98f5-a622-432d-a072-af81307ec0f9",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Check Contact list is empty or not ",
+              "fullTitle": "get all contact list with details   Check Contact list is empty or not ",
+              "timedOut": false,
+              "duration": 1643,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const payload = {\n    headers: {\n      Authorization: `Bearer ${token}`,\n    },\n  };\n  try {\n    const response = await axios.get(`${baseUrl}` ,\n      payload\n    );\n    console.log(response.data);\n     expect(response.status).to.be.equal(200);\n    expect(response.data).not.to.be.empty;\n  } catch (error) {\n    console.log(error);\n  }",
+              "err": {},
+              "uuid": "d0f6bf2a-907a-4b4a-bc87-6a169694b49d",
+              "parentUUID": "02cd98f5-a622-432d-a072-af81307ec0f9",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d0f6bf2a-907a-4b4a-bc87-6a169694b49d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1643,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
